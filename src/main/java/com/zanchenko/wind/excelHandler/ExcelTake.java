@@ -43,12 +43,6 @@ public class ExcelTake {
 //    System.out.println(value);
         return (String) value;
     }
-//    public static Object getCellData(int rowNum, int colNum) throws IOException {
-//        DataFormatter formatter = new DataFormatter();
-//        Object value = formatter.formatCellValue(sheet.getRow(rowNum).getCell(colNum));
-////    System.out.println(value);
-//        return value;
-//    }
     public static int getRowcCount(){
         int rowCount = sheet.getPhysicalNumberOfRows();
         System.out.println("No of Rows: " + rowCount);
