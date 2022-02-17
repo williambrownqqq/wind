@@ -9,6 +9,58 @@
 <body>
 <div th:insert="blocks/header :: header"></div>
 
+<!--<div class="table-responsive">-->
+<!--<table class="table table-striped table-sm">-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th  scope="col"> id </th>-->
+<!--        <th  scope="col"> Month Day </th>-->
+<!--        <th  scope="col"> UTC </th>-->
+<!--        <th  scope="col"> T </th>-->
+<!--        <th  scope="col"> dd </th>-->
+<!--        <th  scope="col"> FF </th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr th:each="el : ${windInfo}">-->
+<!--        <td><span th:text="${el.id}"> Title </span></td>-->
+<!--        <td><span th:text="${el.monthDay}"> Title </span></td>-->
+<!--        <td><span th:text="${el.utc}"> Title </span></td>-->
+<!--        <td><span th:text="${el.t}"> Title </span></td>-->
+<!--        <td><span th:text="${el.dd}"> Title </span></td>-->
+<!--        <td><span th:text="${el.ff}"> Title </span></td>-->
+
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
+<!--</div>-->
+
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Month Day</th>
+            <th scope="col">UTC</th>
+            <th scope="col">T</th>
+            <th scope="col">dd</th>
+            <th scope="col">FF</th>
+        </tr>
+        </thead>
+        <tbody>
+    <tr th:each="el : ${windInfo}">
+        <td th:text="${el.id}"></td>
+        <td th:text="${el.monthDay}"></td>
+        <td th:text="${el.utc}"></td>
+        <td th:text="${el.t}"></td>
+        <td th:text="${el.dd}"></td>
+        <td th:text="${el.ff}"></td>
+
+    </tr>
+        </tbody>
+    </table>
+</div>
+
 <div th:insert="blocks/footer :: footer"></div>
 
 </body>

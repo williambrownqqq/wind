@@ -1,5 +1,6 @@
 package com.zanchenko.wind.controllers;
 
+import com.zanchenko.wind.models.WindData;
 import com.zanchenko.wind.repo.WindDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,8 +17,8 @@ public class WindController {
     @GetMapping("/windInfo")
     public String windInfo(Model model){
         //parseDataFromExcelToDB();
-        //Iterable<WindData> windy = windDataRepository.findAll();
-        //model.addAttribute("windInfo", windy); // передаем по имени винд инфо  массив записей
+        Iterable<WindData> windy = windDataRepository.findAll();
+        model.addAttribute("windInfo", windy); // передаем по имени винд инфо  массив записей
         return "windInfo";
     }
 
