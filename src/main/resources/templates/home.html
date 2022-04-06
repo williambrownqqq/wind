@@ -9,28 +9,6 @@
 <body>
 <div th:insert="blocks/header :: header"></div>
 
-<table>
-    <thead>
-    <tr>
-        <th> id </th>
-        <th> MonthDay </th>
-        <th> t </th>
-        <th> ff </th>
-        <th> utc </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="el : ${windInfo}">
-        <td><span th:text="${el.id}"> Title </span></td>
-        <td><span th:text="${el.monthDay}"> Title </span></td>
-        <td><span th:text="${el.t}"> Title </span></td>
-        <td><span th:text="${el.ff}"> Title </span></td>
-        <td><span th:text="${el.utc}"> Title </span></td>
-<!--        <td><span th:text="${book.author}"> Author </span></td>-->
-    </tr>
-    </tbody>
-</table>
-
 <div th:insert="blocks/footer :: footer"></div>
 </body>
 </html>

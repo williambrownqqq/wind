@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class WindCSV {
-
+    // привязка между именем столбца входных данных и полем в bean компоненте
     @CsvBindByName(column = "Число месяца")
     private int monthDay;
     @CsvBindByName(column = "T")

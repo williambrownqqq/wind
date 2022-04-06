@@ -9,9 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Data
+@Data //генерация всех служебных методов, заменяет сразу команды @ToString, @EqualsAndHashCode, Getter, Setter, @RequiredArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor // will generate a constructor with no parameters
 @Entity
 public class WindData {
     // каждая переменная внутри этого класса - это определенное поле внутри таблички

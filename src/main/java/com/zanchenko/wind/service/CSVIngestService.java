@@ -18,8 +18,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-@Component
-@RequiredArgsConstructor // instead off constructor
+@Component // is an annotation that allows Spring to automatically detect our custom beans.
+@RequiredArgsConstructor // instead off constructor - generates a constructor with 1 parameter for each field that requires special handling. создание конструктора включающего все final поля
 public class CSVIngestService {
     private final WindDataRepository windDataRepository;
     private final WindCSVtoWindDataMapper windCSVtoWindDataMapper;
@@ -46,10 +46,11 @@ public class CSVIngestService {
         windDataRepository.saveAll(mapped);
     }
     void interpol(List<WindCSV> result){
+        int qualityPercent = 0;
         System.out.println(result.size());
         int counter = 0;
         for (WindCSV w : result) {
-            if(w.getDd() ==""){w.setDd("undetermined");}
+            if(w.getDd() ==""){w.setDd("undetermined"); qualityPercent++;}
             else if(w.getDd().equals("Южный")){w.setDd("southern");}
             else if(w.getDd().equals("Ю-З")){w.setDd("southwestern");}
             else if(w.getDd().equals("Западный")){w.setDd("western");}
@@ -63,6 +64,9 @@ public class CSVIngestService {
             counter++;
 
         }
+        //System.out.println(qualityPercent);
+        int damage = qualityPercent * 100 / result.size();
+        System.out.println("damage: " + damage + "%");
 
     }
 }
